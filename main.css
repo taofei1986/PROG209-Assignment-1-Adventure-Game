@@ -1,0 +1,47 @@
+body{
+    background-color: #222222;
+    color: #eeeeee;
+}
+#game{
+    margin: 100px auto;
+    width: 900px;
+    height: 700px;
+}
+#gameHeader{
+    text-align: center;
+    height: 100px;
+    width: 100%;
+}
+#gameHeader h2{
+    padding-top: 30px;
+}
+#locationImage{
+    float: left;
+    width: 600px;
+    height: 600px;
+    background-size: 100%;
+}
+#informationBar{
+    float: left;
+    width: 300px;
+    height: 600px;
+}
+#playerInformation{
+    width: 270px;
+    height: 70px;
+    padding: 15px;
+}
+#notice{
+    width: 270px;
+    height: 320px;
+    padding: 15px;
+    overflow: auto;
+}
+#inputArea{
+    width: 270px;
+    height: 120px;
+    padding: 15px;
+}
+button{
+    width: 60px;
+}
