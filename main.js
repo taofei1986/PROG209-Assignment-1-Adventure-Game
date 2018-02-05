@@ -49,10 +49,10 @@ let tavern={//location:tavern  object
                         displayLocationNotice.innerHTML+="You give one pack of fruit to rich man.<br/>";
                         displayLocationNotice.innerHTML+="Rich man:\"Hello friend! You just get in time. Here is 10 gold.\"<br/><br/>";
                         playerInformation();
-                        break;
-                    }
-                    displayLocationNotice.innerHTML+="There is no fruit in your pack.<br/><br/>";
+                        return;
+                    }                
                 }
+                displayLocationNotice.innerHTML+="There is no fruit in your pack.<br/><br/>";
                 break;
             case "help":
                 displayLocationNotice.innerHTML+="You can try these words "+this.command+".<br/><br/>";
@@ -111,21 +111,21 @@ let cabin={//location:cabin object
                 locationInformation();
                 break;
             case "talk":
-            if(player.playerPack.length==0){
-                displayLocationNotice.innerHTML+="Old man:\"Hello friend! If you have the introduction letter, I can give you one pack of fruit.\"<br/><br/>";
-                return;
-            }
-            for(i=0;i<player.playerPack.length;i++){//check whether there is letter in pack.
-                if(player.playerPack[i]=="letter"){
-                    player.playerPack.splice(i,1);
-                    player.playerPack.push("fruit");
-                    displayLocationNotice.innerHTML+="You give the introduction letter to old man.<br/>";
-                    displayLocationNotice.innerHTML+="Old man:\"Here is the fruit. Take care!\"<br/><br/>";
-                    playerInformation();
-                    break;
+                if(player.playerPack.length==0){
+                    displayLocationNotice.innerHTML+="Old man:\"Hello friend! If you have the introduction letter, I can give you one pack of fruit.\"<br/><br/>";
+                    return;
+                }
+                for(i=0;i<player.playerPack.length;i++){//check whether there is letter in pack.
+                    if(player.playerPack[i]=="letter"){
+                        player.playerPack.splice(i,1);
+                        player.playerPack.push("fruit");
+                        displayLocationNotice.innerHTML+="You give the introduction letter to old man.<br/>";
+                        displayLocationNotice.innerHTML+="Old man:\"Here is the fruit. Take care!\"<br/><br/>";
+                        playerInformation();
+                        return;
+                    }                
                 }
                 displayLocationNotice.innerHTML+="Old man:\"Hello friend! If you have the introduction letter, I can give you one pack of fruit.\"<br/><br/>";
-            }
                 break;
             case "help":
                 displayLocationNotice.innerHTML+="You can try these words "+this.command+".<br/><br/>";
@@ -191,7 +191,7 @@ let blackSmith={//location:BlackSmith Object
                         player.playerPack.splice(i,1);
                         player.playerPack.push("sword");
                         playerInformation();
-                        retrun;
+                        return;
                     }
                 }
                 displayLocationNotice.innerHTML+="You don't have ore in your pack.<br/><br/>";      
