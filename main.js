@@ -382,9 +382,6 @@ let mineCave={//location:mine cave  object
     },
 }
 
-
-
-currentLocation=tavern;
 function ending(){//finished game
     currentLocation=honorPlace;
     locationInformation();
@@ -506,6 +503,7 @@ function load(){// get data from localstorage
     locationInformation();
 }
 
+currentLocation=tavern;// start location tavern
 playerInformation();//display start player's information
 locationInformation();//display start location information
 
