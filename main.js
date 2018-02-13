@@ -15,7 +15,7 @@ let tavern={//location:tavern  object
     imageUrl:"url('image/tavern.jpg')",
     command:["east","south","talk","fruit"],
     letterIsGiven:false,
-    event:function(inputValue){// event happen in this location
+    event:(inputValue)=>{// event happen in this location                              Here is Arrow functions
         switch(inputValue){
             case "east":
                 currentLocation=arena;
@@ -385,10 +385,6 @@ let mineCave={//location:mine cave  object
 
 
 currentLocation=tavern;
-
-playerInformation();
-locationInformation();
-
 function ending(){//finished game
     currentLocation=honorPlace;
     locationInformation();
@@ -509,6 +505,9 @@ function load(){// get data from localstorage
     playerInformation();
     locationInformation();
 }
+
+playerInformation();//display start player's information
+locationInformation();//display start location information
 
 document.getElementById("myButton").addEventListener("click",game);
 document.getElementById("saveButton").addEventListener("click",save);
